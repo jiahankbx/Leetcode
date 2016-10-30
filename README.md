@@ -1,0 +1,2 @@
+# Leetcode
+optimal code
