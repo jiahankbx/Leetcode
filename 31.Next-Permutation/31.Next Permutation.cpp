@@ -37,4 +37,4 @@ public:
     }
 };
 
-9ms beat 30%
+9ms beat 35%
