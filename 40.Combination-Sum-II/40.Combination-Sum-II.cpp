@@ -7,7 +7,7 @@ public:
         count(candidates,0,target);
         return result;
     }
-    void count(vector<int>& candidates,int i,int target){
+    void count(vector<int>& candidates,int index,int target){
         if(target==0){
             result.push_back(temp);
             return;
@@ -15,10 +15,10 @@ public:
         if(target<0){
             return;
         }
-        for(int j=i;j<candidates.size();j++){
-            if(j>i&&candidates[j]==candidates[j-1]) continue;
-            temp.push_back(candidates[j]);
-            count(candidates,j+1,target-candidates[j]);
+        for(int i=index;i<candidates.size();i++){
+            if(i>index&&candidates[i]==candidates[i-1]) continue;
+            temp.push_back(candidates[i]);
+            count(candidates,i+1,target-candidates[i]);//和39题就差这里，一个是i，一个是i+1
             temp.pop_back();
         }
     }
