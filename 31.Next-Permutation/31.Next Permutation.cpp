@@ -38,3 +38,32 @@ public:
 };
 
 9ms beat 35%
+    
+    
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        int Min=INT_MAX;
+        int flag=0;
+        int save;
+        vector<int>::iterator p=nums.begin();
+        vector<int>::iterator q=nums.end();
+        for(int i=nums.size()-2;i>=0;i--){
+            for(int j=nums.size()-1;j>i;j--){
+                if(nums[j]>nums[i]&&nums[j]<Min){
+                    Min=nums[j];
+                    save=j;
+                };
+            };
+            if(save){
+                swap(nums[save],nums[i]);
+                sort(p+i+1,q);
+                flag=1;
+                break;
+            };
+        };
+        if(flag==0) sort(p,q);
+    }
+};
+
+12ms beat 57%
