@@ -37,7 +37,7 @@ public:
     }
 };
 
-9ms beat 35%
+9ms beat 81%
     
     
 class Solution {
